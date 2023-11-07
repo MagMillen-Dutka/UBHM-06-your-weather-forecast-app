@@ -12,9 +12,9 @@ function forecast(event) {
     // This event is needed to stop page refreshing and clearing input. Do not remove.
     event.preventDefault();
     var cityName = cityInputEl.value;
-    displayWeather(cityName);
+    showWeather(cityName);
 }
-function displayWeather(cityName) {
+function showWeather(cityName) {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=9dd332c2cdf5ad3eee158912aa75b747&units=imperial`;
     fetch(url)
         .then(function (response) {
@@ -51,7 +51,7 @@ function displayWeather(cityName) {
                         cards =
                             cards +
                             `<ul class="col-12 col-xl-2 day">
-        <li>${moment(fiveDayData.daily[i].dt, "X").format(" MM/DD/YYYY")}</li>
+        <li>${moment(fiveDayData.daily[i].dt, "X").format(" dddd Do MMMM YYYY")}</li>
         <li><img src ="http://openweathermap.org/img/wn/${fiveDayData.daily[i].weather[0].icon
                             }@2x.png" /></li>
         <li>Temperature: <b> ${fiveDayData.daily[i].temp.day} </b></li>
@@ -77,7 +77,7 @@ function displayCity() {
     var myDashTwo = document.querySelectorAll(".my-2");
     for (var i = 0; i < myDashTwo.length; i++) {
         myDashTwo[i].addEventListener("click", function () {
-            displayWeather(this.textContent);
+            showWeather(this.textContent);
         });
     }
 }
