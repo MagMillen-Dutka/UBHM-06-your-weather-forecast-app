@@ -1,9 +1,9 @@
 var cityInputEl = document.querySelector("#city-input");
 var searchForm = document.querySelector("#search-form");
 var clearBtn = document.querySelector("#clear-history-button");
-var pastSearchedCitiesEl = document.querySelector("#search-history");
+var historySearch = document.querySelector("#search-history");
 var todayWeather = document.querySelector("#today-weather");
-var fiveDayForecast = document.querySelector("#five-day-forecast");
+var fiveForecast = document.querySelector("#fiveForecast");
 var searchHistory = [];
 
 // This will show the present day and five day future forecast
@@ -50,16 +50,16 @@ function showWeather(cityName) {
                     for (var i = 1; i < 6; i++) {
                         cards =
                             cards +
-                            `<ul class="col-12 col-xl-2 day">
+                            `<ul class="col-12 col-xl-2 day rounded">
         <li>${moment(fiveDayData.daily[i].dt, "X").format(" dddd Do MMMM YYYY")}</li>
         <li><img src ="http://openweathermap.org/img/wn/${fiveDayData.daily[i].weather[0].icon
-                            }@2x.png" /></li>
+                            }@2x.png" ></li>
         <li>Temperature: <b> ${fiveDayData.daily[i].temp.day} </b></li>
         <li>Wind Speed: <b> ${fiveDayData.daily[i].wind_speed} </b></li>
         <li>Humidity: <b> ${fiveDayData.daily[i].humidity}</b></li>
     </ul>`;
                     }
-                    fiveDayForecast.innerHTML = cards;
+                    fiveForecast.innerHTML = cards;
                 });
         });
 }
@@ -73,7 +73,7 @@ function displayCity() {
             cityList +
             `<button class="btn btn-secondary my-2" type="submit">${searchHistory[i]}</button>`;
     }
-    pastSearchedCitiesEl.innerHTML = cityList;
+    historySearch.innerHTML = cityList;
     var myDashTwo = document.querySelectorAll(".my-2");
     for (var i = 0; i < myDashTwo.length; i++) {
         myDashTwo[i].addEventListener("click", function () {
@@ -87,7 +87,7 @@ searchForm.addEventListener("submit", forecast);
 
 function clearSearchHistory() {
     localStorage.clear();
-    pastSearchedCitiesEl.innerHTML = "";
+    historySearch.innerHTML = "";
     searchHistory = [];
 }
 clearBtn.addEventListener("click", function () {

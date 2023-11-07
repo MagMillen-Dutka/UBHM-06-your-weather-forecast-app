@@ -10,20 +10,25 @@
     padding: 10px 20px;
   }
   
-  .five-day-forecast {
+  .fiveForecast {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border-radius: 5px 5px 5px 5px;
+    /* box-shadow: 2px 0px 3px 0px; */
+    /* text-size-adjust:inherit; */
   }
   
-  .five-day-forecast-header {
-    padding: 20px 10px;
+  .fiveForecast-header {
+    padding: 15px;
     font-size: 2em;
   }
   
   .today-weather ul {
     list-style: none;
     border: 2px solid blue;
+    background: #1a2846;
+    color: white;
     border-radius: 5px 5px 5px 5px;
     box-shadow: 2px 0px 3px 0px;
     padding: 10px;
@@ -38,7 +43,7 @@
   }
   /* Tablets - landscape and portrait */
   @media screen and (max-width: 1180px) {
-    .five-day-forecast {
+    .fiveForecast {
       flex-direction: column;
     }
     }

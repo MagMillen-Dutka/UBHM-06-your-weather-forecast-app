@@ -18,9 +18,9 @@
     </header>
     
     <main class="container">
-        <div class="row">
+        <section class="row">
 
-            <div class="col-12 col-md-3">
+            <section class="col-12 col-md-3">
                 <form id="search-form">
                     <!-- <label class="text-primary">City Name:</label> -->
                     <input class="form-control my-2 text-primary" type="search" placeholder="Enter your City" id="city-input">
@@ -29,7 +29,7 @@
 
                 
                 <hr>
-                <div class="search-history" id="search-history">
+                <section class="search-history" id="search-history">
 
                     <!-- #search-history will go here  -->
                     <!-- <button class="btn btn-secondary my-2" type="submit">Search History Item 1</button>
@@ -37,28 +37,29 @@
             <button class="btn btn-secondary my-2" type="submit">Search History Item 3</button>
             <button class="btn btn-secondary my-2" type="submit">Search History Item 4</button> -->
 
-                </div>
+                </section>
 
                 <button class="btn btn-primary my-2" style="width: 100%" type="submit" id="clear-history-button">Clear
                     History</button>
-            </div>
+                </section>
 
-            <div class="col-md-9 col-12">
+            <section class="col-md-9 col-12">
 
                 <!-- This will show the weather for today  -->
-                <div class="row today-weather" id="today-weather">
+                <section class="row today-weather" id="today-weather">
 
-                </div>
+                </section>
 
-                <div class="row five-day-forecast-header">Five Days Forecast:</div>
+                <!-- Five day forecast section -->
+                <section class="row fiveForecast-header">Five Days Forecast:</section>
 
-                <!-- Week forecast is here. It will remain hidden until a city is chosen and button submitted - Keep commented out to prevent from showing when blank with information. -->
-                <div class="five-day-forecast" id="five-day-forecast">
+                
+                <section class="fiveForecast" id="fiveForecast">
                     
-                </div>
-            </div>
+                </section>
+            </section>
 
-        </div>
+            </section>
     </main>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
