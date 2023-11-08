@@ -97,6 +97,4 @@ clearBtn.addEventListener("click", function () {
     clearSearchHistory();
 });
 
-// if the clear button is clicked, search history buttons are removed and local storage cleared
-// localStorage.clear();
-// location.reload();
+
