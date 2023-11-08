@@ -14,6 +14,7 @@ function forecast(event) {
     var cityName = cityInputEl.value;
     showWeather(cityName);
 }
+// This is the main code base which takes weather information via an API from Open Weather including city name and longitiude and latitude.
 function showWeather(cityName) {
     var url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=9dd332c2cdf5ad3eee158912aa75b747&units=imperial`;
     fetch(url)
@@ -32,8 +33,9 @@ function showWeather(cityName) {
                         searchHistory.push(currentData.name);
                         localStorage.setItem("city", JSON.stringify(searchHistory));
                     }
-                    displayCity();
+                    showCity();
                     console.log(fiveDayData);
+// All of the below is linked to the display of information including immediate name, date and weather for current day.
                     todayWeather.innerHTML = `<ul>
         <li class="title"><b> ${currentData.name} </b> on <span> ${moment(
                         currentData.dt,
@@ -63,7 +65,8 @@ function showWeather(cityName) {
                 });
         });
 }
-function displayCity() {
+// This section relates to the storing of the cities and the information on the left hand side of the application.
+function showCity() {
     if (localStorage.getItem("city")) {
         searchHistory = JSON.parse(localStorage.getItem("city"));
     }
@@ -81,7 +84,7 @@ function displayCity() {
         });
     }
 }
-displayCity();
+showCity();
 
 searchForm.addEventListener("submit", forecast); 
 
